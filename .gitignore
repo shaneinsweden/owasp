@@ -6,3 +6,5 @@
 /VideoShop/bin/roslyn
 /VideoShop/bin
 /VideoShop/obj/Debug
+/VideoShop.Tests/bin/Debug
+/VideoShop.Tests/obj/Debug
