@@ -1,0 +1,45 @@
+﻿@using VideoShop.Models
+@model VideoShop.Models.PatientList
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>A1:2017 - Injection</h2>
+
+@using (Html.BeginForm("Index", "Patient", FormMethod.Post))
+{
+    <span>Enter Your Name:</span> @Html.TextBoxFor(m => m.Searchname)<br />
+    <input id="Submit" type="submit" value="submit" />
+}
+
+<hr />
+
+@if (Model.Patients.Any())
+{
+    <h3>Search result for @Model.Searchname</h3>
+
+    <table class="table">
+        <thead> 
+            <tr>
+                <th>Patient Id</th>
+                <th>Patient Name</th>
+                <th>Illness</th>
+                <th>Is Terminal</th>
+                <th>Is Sensitive</th>
+            </tr>  
+        </thead> 
+        @foreach(Patient p in Model.Patients)
+        {
+        <tr>
+            <td>@p.PatientId</td>
+            <td>@p.PatientName</td>
+            <td>@p.Illness</td>
+            <td>@p.IsTerminal</td>
+            <td>@p.IsSensitive</td>
+        </tr>
+        }
+    </table>
+}
+

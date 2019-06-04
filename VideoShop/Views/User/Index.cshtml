@@ -1,0 +1,29 @@
+﻿@model VideoShop.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1>A7: Cross Side Scripting</h1>
+
+@using (Html.BeginForm("Index", "User", FormMethod.Post))
+{
+    <span>Enter Your Name:</span> @Html.TextBoxFor(m => m.UserName)<br />
+    <span>Enter Your Age: </span> @Html.TextBoxFor(m => m.Age)<br />
+    <span>Enter Your City: </span>@Html.TextBoxFor(m => m.City)<br />
+
+    <input id="Submit" type="submit" value="submit" />
+}
+
+<hr />
+
+@if (Model != null)
+{
+    <strong>User Name: </strong> @Html.DisplayFor(m => m.UserName)<br />
+    <strong>User Age: </strong> @Html.DisplayFor(m => m.Age)<br />
+    <strong>User City: </strong> @Html.Raw(@Model.City)<br />
+}
+

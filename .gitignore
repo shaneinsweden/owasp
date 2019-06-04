@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/VideoShop/bin/roslyn
+/VideoShop/bin
+/VideoShop/obj/Debug
