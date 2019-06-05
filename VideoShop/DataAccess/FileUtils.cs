@@ -11,7 +11,8 @@ namespace Owasp.Data
     {
         internal static string FetchMovieSummary(string selectedLanguageFile, HttpContext context)
         {
-            return GetSafeArchiveData(selectedLanguageFile, context);
+            return GetArchiveData(selectedLanguageFile, context);
+            //return GetSafeArchiveData(selectedLanguageFile, context);
         }
 
         public static string GetArchiveData(string path, HttpContext context)

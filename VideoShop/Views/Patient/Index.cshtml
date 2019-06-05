@@ -10,36 +10,36 @@
 
 @using (Html.BeginForm("Index", "Patient", FormMethod.Post))
 {
-    <span>Enter Your Name:</span> @Html.TextBoxFor(m => m.Searchname)<br />
-    <input id="Submit" type="submit" value="submit" />
+        <span>Enter Your Name:</span> @Html.TextBoxFor(m => m.Searchname, new { @class = "width200" })<br />
+        <input id="Submit" type="submit" value="submit" />
 }
 
-<hr />
+        <hr />
 
-@if (Model.Patients.Any())
-{
-    <h3>Search result for @Model.Searchname</h3>
-
-    <table class="table">
-        <thead> 
-            <tr>
-                <th>Patient Id</th>
-                <th>Patient Name</th>
-                <th>Illness</th>
-                <th>Is Terminal</th>
-                <th>Is Sensitive</th>
-            </tr>  
-        </thead> 
-        @foreach(Patient p in Model.Patients)
+        @if (Model.Patients.Any())
         {
-        <tr>
-            <td>@p.PatientId</td>
-            <td>@p.PatientName</td>
-            <td>@p.Illness</td>
-            <td>@p.IsTerminal</td>
-            <td>@p.IsSensitive</td>
-        </tr>
+            <h3>Search result for @Model.Searchname</h3>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Patient Id</th>
+                        <th>Patient Name</th>
+                        <th>Illness</th>
+                        <th>Is Terminal</th>
+                        <th>Is Sensitive</th>
+                    </tr>
+                </thead>
+                @foreach (Patient p in Model.Patients)
+                {
+                    <tr>
+                        <td>@p.PatientId</td>
+                        <td>@p.PatientName</td>
+                        <td>@p.Illness</td>
+                        <td>@p.IsTerminal</td>
+                        <td>@p.IsSensitive</td>
+                    </tr>
+                }
+            </table>
         }
-    </table>
-}
 
